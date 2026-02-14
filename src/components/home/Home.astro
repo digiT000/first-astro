@@ -1,0 +1,35 @@
+---
+import Card from "../blog/Card.astro";
+import { getPost } from "../../utils/getPost";
+
+const posts = await getPost(10);
+---
+
+<section class="py-20 flex flex-col items-center text-center">
+  <!-- Title -->
+  <h1 class="text-5xl font-bold text-red-600 mb-4">Welcome to My Blog</h1>
+
+  <!-- Deskripsi -->
+  <p class="text-lg text-gray-700 mb-8 max-w-xl">
+    Discover articles, insights, and tips on web development, productivity, and
+    digital life. Dive in and explore content crafted just for you!
+  </p>
+
+  <!-- CTA Button -->
+  <a
+    href="#explore"
+    class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
+  >
+    Explore
+  </a>
+</section>
+
+<section>
+  <div class="max-w-5xl mx-auto grid grid-cols-3 gap-4">
+    {
+      posts.map((post: any) => (
+        <Card title={post.title} description={post.body} tags={post.tags} />
+      ))
+    }
+  </div>
+</section>
