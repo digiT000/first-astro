@@ -1,9 +1,11 @@
 {
-  "name": "first-astro",
   "main": "dist/_worker.js/index.js",
-  "compatibility_date": "2026-02-15",
-  "compatibility_flags": ["nodejs_compat"],
+  "name": "first-astro",
+  // Update to today's date
+  "compatibility_date": "2025-02-13",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
+    "binding": "ASSETS",
     "directory": "./dist",
   },
   "observability": {
